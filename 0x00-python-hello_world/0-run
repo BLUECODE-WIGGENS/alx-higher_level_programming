@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/0-run
+/usr/bin/*.py
