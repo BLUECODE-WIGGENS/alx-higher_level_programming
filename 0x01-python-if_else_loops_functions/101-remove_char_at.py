@@ -1,7 +1,7 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 
-def romove_char_at(str, n):
+def remove_char_at(str, n):
     i = ''
     for string in range(len(str)):
         if string != n:
