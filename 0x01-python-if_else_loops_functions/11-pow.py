@@ -2,5 +2,5 @@
 
 
 def pow(a, b):
-    result = int(a**b)
+    result = a**b
     return result
