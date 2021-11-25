@@ -2,7 +2,4 @@
 
 
 def multiply_by_2(a_dictionary):
-    dict1 = {}
-    for key in list(a_dictionary.key()):
-        dict1[key] = a_dictionary[key] * 2
-    return dict1
+    return {dict1: dict2 * 2 for dict1, dict2 in a_dictionary.items()}
