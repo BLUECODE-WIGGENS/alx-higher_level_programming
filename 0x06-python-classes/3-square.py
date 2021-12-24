@@ -12,15 +12,16 @@ class Square:
         size: type(int)
         size: >= 0 otherwise raises exception
         """
-
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        
+
     def area(self):
         """
-        method to return the current square area
+        method: square area
+
+        Return: the current square area
         """
         return self.__size * self.__size
