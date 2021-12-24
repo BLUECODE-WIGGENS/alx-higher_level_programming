@@ -42,11 +42,11 @@ class Square:
         if self.size:
             for element in range(self.size):
                 print("#" * self.__size)
-                print(' ' * self.position[0], end='')
+                print(' ' * self.__position[0], end='')
         if self.size == 0:
             print()
         else:
-            print("\n" * self.position[1], end='')
+            print("\n" * self.__position[1], end='')
 
     @property
     def position(self):
