@@ -1,71 +1,71 @@
+
 #!/usr/bin/python3
-"""class module"""
+"""Module to create classes for a singly linked list."""
+
 
 class Node:
-    """define Node class
-    
-    Node class: >>>>
-    attributes: __data type(int)
-                __next_node type(Node)
-    """
+    """node class for a singly linked list."""
+
     def __init__(self, data, next_node=None):
-        """Constructor
-        data: stores data inside node
-        next_node: next node in the singly linked list
-        """
+        """init method."""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """get the data method"""
+        """getter method for __data."""
         return self.__data
 
     @data.setter
     def data(self, value):
-        if type(value) is not int:
-            raise TypeError("data must be an integer")
+        """setter method for __data."""
+        if type(value) != int:
+            raise TypeError('data must be an integer')
         self.__data = value
 
     @property
     def next_node(self):
-        """get the next_node method"""
+        """getter method for __next_node."""
         return self.__next_node
 
     @next_node.setter
-    def next_node(self, value):
-        """set the next_node method"""
-        if type(value) is not Node and value is not None:
-            raise TypeError("next_node must be a Node object")
-        self.__next_node = value
+    def next_node(self, node):
+        """setter method for __next_node."""
+        if type(node) != Node and node is not None:
+            raise TypeError('next_node must be a Node object')
+        self.__next_node = node
+
 
 class SinglyLinkedList:
+    """class for a singly linked list."""
 
     def __init__(self):
+        """init method."""
         self.head = None
 
     def __str__(self):
-        string = ""
-        current_node = self.head
-        while current_node:
-            string += str(current_node.data) + "\n"
-            current_node = current_node.next_node
+        string = ''
+        curr = self.head
+        while curr:
+            string += str(curr.data) + '\n'
+            curr = curr.next_node
         return string[:-1]
 
     def sorted_insert(self, value):
+        """inset a node sorted method."""
         new_node = Node(value)
-        if not self.head:
+        curr = self.head
+        if curr is None:
             self.head = new_node
             return
-        
-        if value < self.head.data:
+        if curr.data > value:
             new_node.next_node = self.head
             self.head = new_node
             return
-        
-        current_node = self.head
-        while current_node.next_node and current_node.data < value:
-            current_node = current_node.next_node
-        if current_node.next_node:
-            new_node.next_node = current_node.next_node
-        current_node.next_node = new_node
+        while curr.next_node is not None:
+            if curr.next_node.data > value:
+                break
+            curr = curr.next_node
+        new_node.next_node = curr.next_node
+        curr.next_node = new_node
+        return
