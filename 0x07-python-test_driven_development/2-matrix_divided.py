@@ -14,19 +14,19 @@
     div can’t be equal to 0
         otherwise raise a ZeroDivisionError exception
         'division by zero'
-    All elements of the matrix should be divided by div
+    All i of the matrix should be divided by div
         rounded to 2 decimal places
 
 """
+
+
 def matrix_divided(matrix, div):
     """
     Args:
        matrix: list of lists of type int or float rounde to 2 decimal places
        div: integer
-    
     Return:
         ruturns new matrix list of lists divided by div
-    
     Raise:
         TypeError: matrix must be a matrix (list of lists) of integers/floats
         TypeError: Each row of the matrix must have the same size
@@ -46,8 +46,8 @@ def matrix_divided(matrix, div):
                             "of integers/floats")
         if len(element1) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
-        for elements in element1:
-            if not isinstance(elements, (int, float)):
+        for i in element1:
+            if not isinstance(i, (int, float)):
                 raise TypeError("matrix must be a matrix (list of lists) " +
                                 "of integers/floats")
-    return [[round(elements / div, 2) for elements in element1] for element1 in matrix]
+    return [[round(i / div, 2) for i in element1] for element1 in matrix]
