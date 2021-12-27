@@ -5,8 +5,8 @@
 class Rectangle:
     """Rectangle class"""
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height =  height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -21,7 +21,7 @@ class Rectangle:
            value: integer
         Raise:
             TypeError: if not int raise an exception
-            ValueError: if int is < 0 raise an exception     
+            ValueError: if int is < 0 raise an exception
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
