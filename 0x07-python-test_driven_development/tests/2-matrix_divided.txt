@@ -1,0 +1,302 @@
+
+The ``matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+This is an example text file in reStructuredText format.
+First import ``factorial`` from the ``0-matrix_divided`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test cases:
+
+    >>> len(matrix_divided.__doc__) > 0
+    True
+
+    >>> len(__import__('2-matrix_divided').__doc__) > 0
+    True
+
+    >>> matrix_divided([[1, 2],[3, 4]], 2)
+    [[0.5, 1.0], [1.5, 2.0]]
+
+    >>> matrix_divided([[1, 2]], 2)
+    [[0.5, 1.0]]
+
+    >>> matrix_divided([[1, 2],[3, 4],[5, 6],[7, 8]], 2)
+    [[0.5, 1.0], [1.5, 2.0], [2.5, 3.0], [3.5, 4.0]]
+
+    >>> matrix_divided([[1]], -1)
+    [[-1.0]]
+
+    >>> matrix_divided([[-1]], 1)
+    [[-1.0]]
+
+    >>> matrix_divided([[-1]], -1)
+    [[1.0]]
+
+    >>> matrix_divided([[1]], 1.98)
+    [[0.51]]
+
+    >>> matrix_divided([[1.98]], 1)
+    [[1.98]]
+
+    >>> matrix_divided([[1.98]], 1.98)
+    [[1.0]]
+
+    >>> matrix_divided([[1.49]], 1.50)
+    [[0.99]]
+
+    >>> matrix_divided([[1.50]], 1.51)
+    [[0.99]]
+
+    >>> matrix_divided([[1.49]], 1.49)
+    [[1.0]]
+
+    >>> matrix_divided([[1.9999999999999999]], 1)
+    [[2.0]]
+
+    >>> matrix_divided([[1]], 1.9999999999999999)
+    [[0.5]]
+
+    >>> matrix_divided([[-1.999999999999999]], 1.9999999999999999)
+    [[-1.0]]
+
+    >>> matrix_divided(00001, 000001)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid token
+
+    >>> matrix_divided(-0000001, -000001)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid token
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    # **********   SECOND ARGUMENT MISSING ************************************
+    >>> matrix_divided(1)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-1)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(0)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(+0)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-0)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(10e10)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-10e10)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(10e1000)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-10e1000)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(10e-1000)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-10e-1000)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(float('nan'))
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(float('inf'))
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(float('-inf'))
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(-)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+    >>> matrix_divided(+)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+    >>> matrix_divided('1')
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided("1")
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided([])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided(())
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided({})
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided([1])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided((1,))
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided({'a':1})
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided([1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided((1, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    ###################################################
+    >>> matrix_divided([[1]], None)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1]], float('inf'))
+    [[0.0]]
+
+    >>> matrix_divided([[1]], float('nan'))
+    [[nan]]
+
+    >>> matrix_divided([[1]], '1')
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1]], "1")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1]], [1])
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1]], (1,))
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1]], {})
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    # ********************** SECOND ARGUMENT WRONG ****************************
+
+    >>> matrix_divided([[1]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1]], +0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1]], -0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1]], 10e10)
+    [[0.0]]
+
+    >>> matrix_divided([[1]], -10e10)
+    [[-0.0]]
+
+    >>> matrix_divided([[1]], 10e1000)
+    [[0.0]]
+
+    >>> matrix_divided([[1]], -10e1000)
+    [[-0.0]]
+
+    >>> matrix_divided([[1]], 10e-1000)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: float division by zero
+
+    >>> matrix_divided([[1]], -10e-1000)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: float division by zero
+
