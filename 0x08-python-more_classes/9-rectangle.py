@@ -2,8 +2,6 @@
 """define Rectangle module"""
 
 
-import re
-
 
 class Rectangle:
     """Rectangle class"""
