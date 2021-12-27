@@ -2,7 +2,6 @@
 """define Rectangle module"""
 
 
-
 class Rectangle:
     """Rectangle class"""
 
