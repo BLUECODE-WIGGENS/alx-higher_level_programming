@@ -72,5 +72,5 @@ class Rectangle:
         if self.height == 0:
             return string
         for i in range(self.height):
-            string += "#" *self.width + '\n'
+            string += "#" * self.width + '\n'
         return string[:-1]
