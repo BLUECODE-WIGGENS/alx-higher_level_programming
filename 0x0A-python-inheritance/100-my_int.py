@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """define MyInt module"""
 
+
 class MyInt(int):
     """MyInt class"""
 
