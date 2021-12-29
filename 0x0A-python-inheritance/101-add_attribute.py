@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""add_attribute module"""
+"""define add_attribute module"""
 
 
 def add_attrbute(object, attr, size):
