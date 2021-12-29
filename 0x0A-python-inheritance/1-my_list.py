@@ -5,6 +5,9 @@
 class MyList(list):
     """MyList class"""
 
+    def __init__(self):
+        super.__init_subclass__()
+
     def print_sorted(self):
         """
         Public instance method:
