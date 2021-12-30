@@ -8,12 +8,4 @@ def read_file(filename=""):
       filename: the name of the file to read from
     """
     with open("".format(filename), "r") as filename:
-        chunk = 10
-        data = ""
-
-        while True:
-            filename.read(chunk)
-            print(data, end="")
-
-            if data == "":
-                break
+      print(filename.read(), end="")
