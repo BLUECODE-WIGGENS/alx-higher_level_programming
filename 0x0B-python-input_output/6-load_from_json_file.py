@@ -13,7 +13,7 @@ def load_from_file(filename):
 
         Args:
            filename: file to load json representation from
-        
+
         Return: nothing
         """
         json.load(filename)

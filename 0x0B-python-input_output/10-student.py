@@ -18,7 +18,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """returns the dictionary description with simple 
+        """returns the dictionary description with simple
         (list, dictionary, string, integer and boolean)
         for JSON serialization of an object
         """
@@ -29,5 +29,5 @@ class Student:
                     attrs_dict[key_item] = value_item
         else:
             return self.__dict__
-        
+
         return attrs_dict

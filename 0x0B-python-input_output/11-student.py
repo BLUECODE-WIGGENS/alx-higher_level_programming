@@ -18,7 +18,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """returns the dictionary description with simple 
+        """returns the dictionary description with simple
         (list, dictionary, string, integer and boolean)
         for JSON serialization of an object
         """
@@ -29,10 +29,10 @@ class Student:
                     attrs_dict[key_item] = value_item
         else:
             return self.__dict__
-        
+
         return attrs_dict
 
     def reload_from_json(self, json):
         """replaces all attributes of the Student instance"""
         for key_item, value_item in json.items():
-            setattr(self, key_item, value_item) 
+            setattr(self, key_item, value_item)
